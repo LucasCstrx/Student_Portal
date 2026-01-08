@@ -21,114 +21,17 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($samples as $sample)
                 <tr>
-                    <td>Christian Jay</td>
-                    <td>Bachelor of Science in Information Technology</td>
-                    <td>2</td>
+                    <td>{{ $sample['name'] }}</td>
+                    <td>{{ $sample['course'] }}</td>
+                    <td>{{ $sample['year'] }}</td>
                     <td>
                         <a href="{{ url('/students/1') }}" class="btn btn-sm btn-primary">View</a>
                         <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Maria Carissa</td>
-                    <td>Bachelor of Secondary Education</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/2') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jose Rizal</td>
-                    <td>Bachelor of Information Technology</td>
-                    <td>4</td>
-                    <td>
-                        <a href="{{ url('/students/3') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/4/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Juan Tamad</td>
-                    <td>Bachelor of Science in Nursing</td>
-                    <td>1</td>
-                    <td>
-                        <a href="{{ url('/students/4') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/5/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>James Castro</td>
-                    <td>Bachelor of Science in Medical Laboratories</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/5') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Erleen Ansing</td>
-                    <td>Bachelor of Science in Nursing</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/6') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Leo Labis</td>
-                    <td>Bachelor of Science in Medical Laboratories</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/7') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Carlito Camajalan</td>
-                    <td>Bachelor of Science in Electrical Engineer</td>
-                    <td>4</td>
-                    <td>
-                        <a href="{{ url('/students/8') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/4/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Lance Antipaso</td>
-                    <td>Bachelor of Science in Maritime</td>
-                    <td>3</td>
-                    <td>
-                        <a href="{{ url('/students/9') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/3/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Adrian Yu</td>
-                    <td>Bachelor of Science in Maritime</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/10') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Keannice Loque</td>
-                    <td>Bachelor of Science in Secondary Education</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/11') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
-				<tr>
-                    <td>Sultan Abdullah</td>
-                    <td>Bachelor of Science in Accountancy</td>
-                    <td>2</td>
-                    <td>
-                        <a href="{{ url('/students/12') }}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
 
