@@ -27,7 +27,7 @@
                     <td>{{ $sample['course'] }}</td>
                     <td>{{ $sample['year'] }}</td>
                     <td>
-                        <a href="{{ url('/students/1') }}" class="btn btn-sm btn-primary">View</a>
+                        <a href="/students/{{$sample['id']}}" class="btn btn-sm btn-primary">View</a>
                         <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                     </td>
                 </tr>
