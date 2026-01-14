@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('components.layout')
 
 @section('content')
     <div class="container py-5">
@@ -34,4 +34,3 @@
         </form>
     </div>
 @endsection
-

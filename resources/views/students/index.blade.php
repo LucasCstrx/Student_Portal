@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('components.layout')
 
 @section('content')
     <div class="container py-5">
@@ -8,7 +8,8 @@
         </div>
 
         <div class="mb-3">
-            <input id="studentSearch" type="search" class="form-control" placeholder="Search students by name, course, or year...">
+            <input id="studentSearch" type="search" class="form-control"
+                placeholder="Search students by name, course, or year...">
         </div>
 
         <table class="table table-striped">
@@ -22,16 +23,16 @@
             </thead>
             <tbody>
                 @foreach ($samples as $sample)
-                <tr>
-                    <td>{{ $sample['name'] }}</td>
-                    <td>{{ $sample['course'] }}</td>
-                    <td>{{ $sample['year'] }}</td>
-                    <td>
-                        <a href="/students/{{$sample['id']}}" class="btn btn-sm btn-primary">View</a>
-                        <a href="{{ url('/students/2/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $sample['name'] }}</td>
+                        <td>{{ $sample['course'] }}</td>
+                        <td>{{ $sample['year'] }}</td>
+                        <x-card :view="url('/students/' . $sample['id'])" :edit="url('/students/' . $sample['id'] . '/edit')">
+                        </x-card>
+                    </tr>
                 @endforeach
+
+
             </tbody>
         </table>
 
@@ -44,7 +45,9 @@
                 const rows = Array.from(table.querySelectorAll('tr'));
                 const noResults = document.getElementById('noResults');
 
-                function normalize(s){ return (s||'').toString().toLowerCase().trim(); }
+                function normalize(s) {
+                    return (s || '').toString().toLowerCase().trim();
+                }
 
                 function filter() {
                     const q = normalize(input.value);
@@ -63,7 +66,12 @@
 
                 input.addEventListener('input', filter);
                 // optional: allow clearing with Escape
-                input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value=''; filter(); }});
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        input.value = '';
+                        filter();
+                    }
+                });
             })();
         </script>
 

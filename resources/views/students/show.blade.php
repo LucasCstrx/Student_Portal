@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('components.layout')
 
 @section('content')
     <div class="container py-5">
@@ -6,10 +6,10 @@
 
         <div class="card mb-3">
             <div class="card-body">
-                <p><strong>Name:</strong> {{ $student['name'] ?? $student->name ?? 'N/A' }}</p>
-                <p><strong>Email:</strong> {{ $student['email'] ?? $student->email ?? 'N/A' }}</p>
-                <p><strong>Course:</strong> {{ $student['course'] ?? $student->course ?? 'N/A' }}</p>
-                <p><strong>Year Level:</strong> {{ $student['year'] ?? $student->year ?? 'N/A' }}</p>
+                <p><strong>Name:</strong> {{ $student['name'] ?? ($student->name ?? 'N/A') }}</p>
+                <p><strong>Email:</strong> {{ $student['email'] ?? ($student->email ?? 'N/A') }}</p>
+                <p><strong>Course:</strong> {{ $student['course'] ?? ($student->course ?? 'N/A') }}</p>
+                <p><strong>Year Level:</strong> {{ $student['year'] ?? ($student->year ?? 'N/A') }}</p>
             </div>
         </div>
 
